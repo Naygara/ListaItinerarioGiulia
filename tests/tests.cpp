@@ -14,7 +14,7 @@ void teste_criaLista() {
     assert(lista->inicio == NULL);
 
     free(lista);
-    cout << "criaLista() passou em todos os testes" << endl;
+    cout << "criaLista() passou em todos os testes!" << endl;
 }
 
 // ===== TESTES DA FUNÇÃO insere (inserção no início) =====
