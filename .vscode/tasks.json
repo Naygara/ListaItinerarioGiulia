@@ -19,6 +19,25 @@
             },
             "problemMatcher": ["$gcc"],
             "detail": "Tarefa de compilação manual para debug com GDB."
+        },
+        {
+            "label": "build tests",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "${workspaceFolder}/tests/tests.cpp",
+                "${workspaceFolder}/src/linked_list.cpp",
+                "-I${workspaceFolder}/include",
+                "-o",
+                "${workspaceFolder}/tests/tests"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Tarefa de compilação para os testes."
         }
     ]
 }
