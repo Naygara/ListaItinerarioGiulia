@@ -12,7 +12,17 @@ struct ListaSimplesmenteEncadeada {
     Node* inicio;
 };
 
+ListaSimplesmenteEncadeada* criaLista();
+void destroiLista(ListaSimplesmenteEncadeada &lista);
+void insere(ListaSimplesmenteEncadeada &lista, int conteudo);
 
+// Demais funcionalidades exigidas no exercício
+void mostraLista(ListaSimplesmenteEncadeada &lista);
+bool listaVazia(ListaSimplesmenteEncadeada &lista);
+int numeroElementos(ListaSimplesmenteEncadeada &lista);
+void inserePosicao(ListaSimplesmenteEncadeada &lista, int conteudo, int posicao);
+void removePosicao(ListaSimplesmenteEncadeada &lista, int posicao);
+void inverteLista(ListaSimplesmenteEncadeada &lista);
 
 #endif // LINKED_LIST_H
   
