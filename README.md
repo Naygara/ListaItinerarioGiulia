@@ -1,7 +1,7 @@
 # Setup Tarefa: Lista Itinerário
 
 ## Descrição
-[cite_start]Este projeto é um sistema interno em C++ desenvolvido para auxiliar motoristas e supervisores de rota de uma empresa de transporte coletivo[cite: 5]. [cite_start]O sistema utiliza listas encadeadas como estrutura de dados principal para gerenciar as paradas e evitar que ônibus pulem pontos ou sigam a ordem incorreta do trajeto[cite: 4, 6].
+Este projeto é um sistema interno em C++ desenvolvido para auxiliar motoristas e supervisores de rota de uma empresa de transporte coletivo[cite: 5]. [cite_start]O sistema utiliza listas encadeadas como estrutura de dados principal para gerenciar as paradas e evitar que ônibus pulem pontos ou sigam a ordem incorreta do trajeto[cite: 4, 6].
 
 ## Requisitos
 - [cite_start]**Compilador:** GCC (g++) para compilação em C++[cite: 6].
