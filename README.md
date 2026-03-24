@@ -1,73 +1,33 @@
-01 - Lista Simplesmente Encadeada (Linked List)
-Aluna: Giulia Naygara Barboza (24203662)
+# Setup Tarefa: Lista Itinerário
 
-Descrição:
-Este repositório contém a implementação de um exercício de Lista Simplesmente Encadeada (Linked List) em C++. O projeto foi desenvolvido utilizando apenas alocação dinâmica de memória para a estrutura de Lista Dinâmica, sem o uso de estruturas de dados adicionais, cumprindo os requisitos do trabalho.
+## Descrição
+[cite_start]Este projeto é um sistema interno em C++ desenvolvido para auxiliar motoristas e supervisores de rota de uma empresa de transporte coletivo[cite: 5]. [cite_start]O sistema utiliza listas encadeadas como estrutura de dados principal para gerenciar as paradas e evitar que ônibus pulem pontos ou sigam a ordem incorreta do trajeto[cite: 4, 6].
 
-Funcionalidades:
-As seguintes operações foram implementadas na estrutura da lista:
- * Criação/Inicialização: criar uma lista vazia
- * Inserção: início da lista
- * Liberar lista (destroi): Liberar a memória da lista
- * Mostrar lista: imprime os elementos da lista
- * Lista Vazia: verifica se lista está vazia
- * Número de Elementos: quantidade de elementos na lista
- * Inserção: posição específica
- * Remoção: elemento (node) de posição específica
- * Inversão: Inverter os elementos da lista
-   
-Pré-requisitos:
-Ferramentas de Desenvolvimento necessárias para rodar o projeto:
- * Compilador: GCC/G++
- * Debugger: GDB
- * Editor: Visual Studio Code (feito nesse caso em Codespace)
+## Requisitos
+- [cite_start]**Compilador:** GCC (g++) para compilação em C++[cite: 6].
+- **IDE Recomendada:** VSCode com extensões para C/C++.
 
-   
-Passo-a-passo para execução do projeto:
+## Compilação e Execução
 
-Instalação
- * Clone o repositório.
- * Certifique-se de ter o g++ e gdb instalados em seu sistema.
-   
-Fluxo Principal (Execução)
-Para compilar o projeto manualmente via terminal:
-g++ main.cpp src/linked_list.cpp -Iinclude -o main
-./main
+### Fluxo Principal
+Para compilar e executar o código principal (na raiz do projeto):
+`g++ -I include src/*.cpp main.cpp -o programa`
+`.\programa.exe` (Windows) ou `./programa` (Linux/macOS)
 
-Fluxo de Testes
-Para compilar e rodar os testes:
-g++ tests/tests.cpp src/linked_list.cpp -Iinclude -o tests_bin
-./tests_bin
+### Testes
+Para compilar e executar a suíte de testes:
+`g++ -I include tests/*.cpp -o testes`
+`.\testes.exe` (Windows) ou `./testes` (Linux/macOS)
 
-Depuração (Debugging)
-Via VSCode (Interface Gráfica)
-O projeto já está configurado com os arquivos .vscode/tasks.json e .vscode/launch.json.
- * Abra a pasta do projeto no VSCode.
- * Coloque breakpoints clicando na margem esquerda do código.
- * Pressione F5 ou acesse a aba Run and Debug e clique em "Debug Linked List".
-   
-   O VSCode irá compilar o projeto com símbolos de debug (-g) automaticamente antes de iniciar a sessão.
-Via CLI (Terminal com GDB)
-Compilar com símbolos de debug:
-g++ -g main.cpp src/linked_list.cpp -Iinclude -o main
-Iniciar o GDB:
-gdb ./main
+---
 
-Comandos básicos do GDB:
- * break main: Define um ponto de parada na função principal.
- * run (ou r): Inicia a execução do programa.
- * next (ou n): Executa a próxima linha de código.
- * step (ou s): Entra em uma função.
- * print <variavel> (ou p): Exibe o valor de uma variável.
- * continue (ou c): Continua a execução até o próximo breakpoint.
- * info breakpoints: Lista todos os breakpoints.
- * quit (ou q): Sai do GDB.
-Fluxo de Exemplo:
-(gdb) info breakpoints
-(gdb) break main
-(gdb) break criaLista()
-(gdb) run
-(gdb) next
-(gdb) next
-(gdb) print lista
-(gdb) quit
+## Pontos de Análise e Justificativa
+
+**1. [cite_start]Qual variação de lista foi escolhida (simplesmente encadeada, duplamente encadeada ou circular)?** [cite: 11]
+Foi escolhida a Lista Duplamente Encadeada.
+
+**2. Por que essa estrutura é mais adequada para esse problema do que as demais? [cite_start]Justifique com base nas operações implementadas.** [cite: 12, 13]
+[cite_start]A lista duplamente encadeada é a escolha ideal porque o menu do sistema exige a operação de "Listar rota em ordem inversa" (exibir o trajeto percorrido de trás para frente)[cite: 8]. Em uma lista simples, fazer o percurso reverso seria ineficiente (exigiria percorrer a estrutura toda várias vezes ou usar estruturas auxiliares). Com a lista dupla, os ponteiros para o nó anterior permitem essa travessia reversa de forma direta e rápida. [cite_start]Além disso, ter um ponteiro para o nó anterior facilita operações no final da lista, como a de "Remover última parada"[cite: 8].
+
+**3. Haveria algum cenário real (ex: linha circular de ônibus) em que outra variação de lista seria mais vantajosa? [cite_start]Explique.** [cite: 14]
+Sim. [cite_start]Em um cenário de uma linha de ônibus estritamente circular — onde o veículo chega ao ponto final e a próxima parada já é imediatamente o ponto inicial, recomeçando o trajeto sem pausas na garagem — uma Lista Circular seria a mais vantajosa[cite: 14]. Nesse caso, o ponteiro final da lista apontaria de volta para o primeiro nó, o que modelaria perfeitamente a lógica contínua e cíclica da rota no mundo real.
